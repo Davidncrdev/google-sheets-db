@@ -4,7 +4,7 @@ async function testWrite() {
     console.log("✍ Escribiendo datos en Google Sheets...");
 
     // Datos de prueba (Nombre de canción, Tono, Fecha)
-    const datosPrueba = ["Canción de prueba", "Sol Mayor", "2025-02-16"];
+    const datosPrueba = ["Cancion 1", "Si mayor", "2023-02-16"];
 
     try {
         await writeSheet("A2", datosPrueba);

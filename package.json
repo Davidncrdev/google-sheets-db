@@ -5,7 +5,10 @@
     "main": "services/sheets.js",
     "dependencies": {
         "autoprefixer": "^10.4.20",
+        "body-parser": "^1.20.3",
+        "cors": "^2.8.5",
         "dotenv": "^16.4.7",
+        "express": "^4.21.2",
         "googleapis": "^118.0.0",
         "postcss": "^8.5.2",
         "tailwindcss": "^4.0.6"
