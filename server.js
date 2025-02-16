@@ -1,21 +1,21 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const { writeSheet } = require("./services/sheets");
+const { writeSheet } = require("../services/sheets");
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// ✅ Ruta para comprobar si la API está funcionando
+// Ruta de prueba
 app.get("/", (req, res) => {
-    res.send("🚀 API funcionando. Usa POST en /write para escribir en Google Sheets.");
+    res.send("🚀 API funcionando en Vercel. Usa POST en /write para escribir en Google Sheets.");
 });
 
-// 📌 Ruta para escribir datos en Google Sheets
+// Ruta para escribir en Google Sheets
 app.post("/write", async (req, res) => {
     try {
-        const { values } = req.body; // Datos enviados desde el frontend
+        const { values } = req.body;
 
         if (!values || !Array.isArray(values)) {
             return res.status(400).json({ error: "Formato de datos incorrecto" });
@@ -28,8 +28,4 @@ app.post("/write", async (req, res) => {
     }
 });
 
-// 🔥 Iniciar el servidor
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
-});
+module.exports = app;
